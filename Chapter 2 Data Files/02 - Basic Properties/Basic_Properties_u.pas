@@ -8,10 +8,10 @@ uses
 
 type
   TfrmBasicProperties = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
+    btnRed: TButton;
+    btnGreen: TButton;
+    btnBlue: TButton;
+    btnPurple: TButton;
   private
     { Private declarations }
   public
