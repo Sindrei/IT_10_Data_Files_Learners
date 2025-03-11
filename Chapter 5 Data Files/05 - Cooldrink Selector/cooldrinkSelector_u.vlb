@@ -1,0 +1,10 @@
+﻿[]
+Coordinates=182,1,91,36
+
+[lblHeader]
+Coordinates=111,10,53,58
+Visible=True
+
+[rgrCooldrinks]
+Coordinates=10,10,91,58
+
