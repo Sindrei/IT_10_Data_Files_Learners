@@ -123,7 +123,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="HelloDelphi_u.pas">
-            <Form>Form1</Form>
+            <Form>frmHelloDelphi</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

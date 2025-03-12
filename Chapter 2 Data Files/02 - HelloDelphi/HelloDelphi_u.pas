@@ -3,7 +3,8 @@ unit HelloDelphi_u;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
@@ -27,6 +28,10 @@ implementation
 procedure TfrmHelloDelphi.btnChangeClick(Sender: TObject);
 begin
   lblMessage.Caption := 'Hello, Delphi!';
+  frmHelloDelphi.Caption := 'Hello';
+  lblMessage.Caption := 'Hello, World';
+  lblMessage.Font.Size := 48;
+  lblMessage.Font.Style := [fsItalic];
 end;
 
 end.

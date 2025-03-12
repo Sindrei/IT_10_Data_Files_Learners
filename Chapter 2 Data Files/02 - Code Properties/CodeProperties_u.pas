@@ -17,6 +17,11 @@ type
     Button4: TButton;
     Button5: TButton;
     Edit1: TEdit;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,5 +34,37 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCodeProperties.Button1Click(Sender: TObject);
+begin
+  Label1.Font.Size := 12;
+  Label1.Font.Style := [fsBold];
+end;
+
+procedure TfrmCodeProperties.Button2Click(Sender: TObject);
+begin
+  Label2.Font.Size := 12;
+  Label2.Caption := 'Programming in Delphi';
+  Label2.Font.Name := 'Times New Roman';
+end;
+
+procedure TfrmCodeProperties.Button3Click(Sender: TObject);
+begin
+  Label3.Caption := 'Programming in Delphi is simple';
+  Label3.Font.Size := 12;
+  Label3.Font.Style := [fsBold, fsItalic];
+  Label3.Font.Color := clRed;
+end;
+
+procedure TfrmCodeProperties.Button4Click(Sender: TObject);
+begin
+  frmCodeProperties.Caption := 'Make the user interface pretty';
+end;
+
+procedure TfrmCodeProperties.Button5Click(Sender: TObject);
+begin
+  Edit1.Text := 'Example';
+  Edit1.Font.Style := [fsBold];
+end;
 
 end.

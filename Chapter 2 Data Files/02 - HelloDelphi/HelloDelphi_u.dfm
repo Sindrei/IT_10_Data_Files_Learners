@@ -17,6 +17,12 @@ object frmHelloDelphi: TfrmHelloDelphi
     Width = 30
     Height = 15
     Caption = '??????'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
   end
   object btnChange: TButton
     Left = 264
