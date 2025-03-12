@@ -29,14 +29,14 @@ implementation
 
 procedure TfrmSyntaxErrors.btnMessage1Click(Sender: TObject);
 begin
-lblMessage1.Caption := Good afternoon;
-lblMessage1.Font.Color := clRed
+  lblMessage1.Caption := 'Good afternoon';
+  lblMessage1.Font.Color := clRed
 end;
 
 procedure TfrmSyntaxErrors.btnMessage2Click(Sender: TObject);
 begin
-lblMessage2.Caption := 'Plant a tree today'
-lblMessage2.Font.Color = clGreen;
+  lblMessage2.Caption := 'Plant a tree today';
+  lblMessage2.Font.Color := clGreen;
 end;
 
 end.
