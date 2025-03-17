@@ -30,7 +30,7 @@ implementation
 procedure TfrmSyntaxErrors.btnMessage1Click(Sender: TObject);
 begin
   lblMessage1.Caption := 'Good afternoon';
-  lblMessage1.Font.Color := clRed
+  lblMessage1.Font.Color := clRed;
 end;
 
 procedure TfrmSyntaxErrors.btnMessage2Click(Sender: TObject);
