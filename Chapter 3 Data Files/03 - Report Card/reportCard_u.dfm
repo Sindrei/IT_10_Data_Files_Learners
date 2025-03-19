@@ -10,8 +10,6 @@ object frmReportCard: TfrmReportCard
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object pnlInput: TPanel
     Left = 8
@@ -67,6 +65,7 @@ object frmReportCard: TfrmReportCard
       Height = 25
       Caption = 'Generate'
       TabOrder = 0
+      OnClick = btnGenerateClick
     end
     object edtMark2: TEdit
       Left = 88
