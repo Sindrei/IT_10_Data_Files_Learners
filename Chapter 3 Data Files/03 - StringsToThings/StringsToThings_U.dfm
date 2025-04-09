@@ -10,9 +10,7 @@ object frmStringsToThings: TfrmStringsToThings
   Font.Height = -15
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 18
   object Label1: TLabel
     Left = 8
@@ -147,5 +145,6 @@ object frmStringsToThings: TfrmStringsToThings
     Height = 25
     Caption = 'Get and Display'
     TabOrder = 6
+    OnClick = btnGetAndDisplayClick
   end
 end

@@ -27,6 +27,7 @@ type
     edtGrade: TEdit;
     edtHeight: TEdit;
     btnGetAndDisplay: TButton;
+    procedure btnGetAndDisplayClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,5 +40,26 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmStringsToThings.btnGetAndDisplayClick(Sender: TObject);
+var
+  sName, sSurname, sID: String;
+  iAge, iGrade: Integer;
+  rHeight: Real;
+begin
+  sName := edtName.Text;
+  sSurname := edtSurname.Text;
+  iAge := StrToInt(edtAge.Text);
+  sID := edtIDNumber.Text;
+  iGrade := StrToInt(edtGrade.Text);
+  rHeight := StrToFloat(edtHeight.Text);
+
+  lblName.Caption := sName;
+  lblSurname.Caption := sSurname;
+  lblAge.Caption := IntToStr(iAge);
+  lblIDNumber.Caption := sID;
+  lblGrade.Caption := IntToStr(iGrade);
+  lblHeight.Caption := FloatToStr(rHeight) + ' m';
+end;
 
 end.
