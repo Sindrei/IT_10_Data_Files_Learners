@@ -50,8 +50,12 @@ begin
   sName := edtName.Text;
   sSubject := edtSubject.Text;
 
-  iMark1 := StrToInt(edtMark1.Text);
-  iMark2 := StrToInt(edtMark2.Text);
+  try
+    iMark1 := StrToInt(edtMark1.Text);
+    iMark2 := StrToInt(edtMark2.Text);
+  except
+    showMessage('Please enter a whole number');
+  end;
 
   lblOutput.Caption := sName;
   lblSubject.Caption := sSubject;
