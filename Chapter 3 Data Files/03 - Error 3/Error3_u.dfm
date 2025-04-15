@@ -10,9 +10,7 @@ object frmError3: TfrmError3
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 16
   object Label1: TLabel
     Left = 80

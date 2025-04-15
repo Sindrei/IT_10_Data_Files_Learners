@@ -31,14 +31,15 @@ implementation
 {$R *.dfm}
 
 procedure TfrmError3.btnDisplayClick(Sender: TObject);
-  var
-    sFirstName, sSecondName, sSurname: String;
-  begin
-    sFirstName := edtFirstName.Text;
-    sSecondName := edtSecondName.Text;
-    sSurname := edtSurname.Text;
+var
+  sFirstName, sSecondName, sSurname: String;
+begin
+  sFirstName := edtFirstName.Text;
+  sSecondName := edtSecondName.Text;
+  sSurname := edtSurname.Text;
 
-    lblDisplay.Caption := 'Initials: ' + sSecondName[1] + sSurname[1] + sFirstName[1];
-  end;
+  lblDisplay.Caption := 'Initials: ' + sFirstName[1] + sSecondName[1] +
+    sSurname[1];
+end;
 
 end.
