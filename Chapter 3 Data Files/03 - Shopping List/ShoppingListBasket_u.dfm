@@ -10,9 +10,7 @@ object frmShoppingList: TfrmShoppingList
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 16
   object lblMessage1: TLabel
     Left = 296
@@ -147,5 +145,6 @@ object frmShoppingList: TfrmShoppingList
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 10
+    OnClick = btnDisplayClick
   end
 end
