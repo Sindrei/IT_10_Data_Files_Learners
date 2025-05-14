@@ -3,7 +3,8 @@ unit vatCalcualtor_u;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
@@ -20,6 +21,7 @@ type
     lblVAT: TLabel;
     lblInclusive: TLabel;
     procedure btnResetClick(Sender: TObject);
+    procedure btnCalculateClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,10 +30,24 @@ type
 
 var
   frmVatCalculator: TfrmVatCalculator;
+  iNumber: Integer = 500;
 
 implementation
 
 {$R *.dfm}
+
+procedure TfrmVatCalculator.btnCalculateClick(Sender: TObject);
+var
+  rPrice, rVat, rInclusive: Real;
+begin
+  rPrice := StrToFloat(edtValue.Text);
+  rVat := rPrice * 0.15;
+  rInclusive := rPrice + rVat;
+
+  lblPrice.Caption := FloatToStrF(iNumber, ffCurrency, 8, 2);
+  lblVAT.Caption := FloatToStrF(rVat, ffCurrency, 8, 2);
+  lblInclusive.Caption := FloatToStrF(rInclusive, ffCurrency, 8, 2);
+end;
 
 procedure TfrmVatCalculator.btnResetClick(Sender: TObject);
 begin
@@ -40,6 +56,5 @@ begin
   lblInclusive.Caption := '0';
   edtValue.Text := '';
 end;
-
 
 end.

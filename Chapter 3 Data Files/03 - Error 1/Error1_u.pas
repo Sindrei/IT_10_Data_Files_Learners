@@ -35,11 +35,11 @@ var
 sFirstName, sSurname: String;
 iAge: Integer;
 begin
-   sFstName := edtFirstName.Text;
-   sSurname := detSurname.Text;
-   iAge = sedAge.Value;
+   sFirstName := edtFirstName.Text;
+   sSurname := edtSurname.Text;
+   iAge := sedAge.Value;
 
-   lblOutput.Value := sFirstName[1] + ' ' + sSurname + ', ' + IntToStr(iAge) + ' years old.';
+   lblOutput.Caption := sFirstName[1] + ' ' + sSurname + ', ' + IntToStr(iAge) + ' years old.';
 end;
 
 end.

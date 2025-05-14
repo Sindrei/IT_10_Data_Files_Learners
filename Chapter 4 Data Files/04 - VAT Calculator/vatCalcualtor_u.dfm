@@ -10,8 +10,6 @@ object frmVatCalculator: TfrmVatCalculator
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object lblHeader: TLabel
     Left = 8
@@ -55,24 +53,30 @@ object frmVatCalculator: TfrmVatCalculator
     Caption = 'Inclusive:'
   end
   object lblPrice: TLabel
-    Left = 187
+    Left = 72
     Top = 99
-    Width = 6
+    Width = 121
     Height = 13
+    Alignment = taRightJustify
+    AutoSize = False
     Caption = '0'
   end
   object lblVAT: TLabel
-    Left = 187
+    Left = 72
     Top = 126
-    Width = 6
+    Width = 121
     Height = 13
+    Alignment = taRightJustify
+    AutoSize = False
     Caption = '0'
   end
   object lblInclusive: TLabel
-    Left = 187
+    Left = 72
     Top = 156
-    Width = 6
+    Width = 121
     Height = 13
+    Alignment = taRightJustify
+    AutoSize = False
     Caption = '0'
   end
   object edtValue: TEdit
@@ -90,6 +94,7 @@ object frmVatCalculator: TfrmVatCalculator
     Height = 25
     Caption = 'Calculate'
     TabOrder = 1
+    OnClick = btnCalculateClick
   end
   object btnReset: TButton
     Left = 208

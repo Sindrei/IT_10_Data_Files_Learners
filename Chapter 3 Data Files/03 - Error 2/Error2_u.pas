@@ -28,9 +28,9 @@ implementation
 
 procedure TfrmError2.btnProcessClick(Sender: TObject);
 var
-rPercent: Real;
+  rPercent: Real;
 begin
-  rPercent := StrToInt(edtPercentage.Text);
+  rPercent := StrToFloat(edtPercentage.Text);
 
   lblDisplay.Caption := 'Your term mark is: ' + FloatToStr(rPercent) + '%';
 end;
