@@ -34,7 +34,7 @@ procedure TForm1.btnThrowClick(Sender: TObject);
 var
   iDice1, iDice2: Integer;
 begin
-   RichEdit1.Clear;
+  RichEdit1.Clear;
   { if iDice1 = 1 then
     begin
     imgDice1.Picture.LoadFromFile('images\dice-six-faces-one.png');
@@ -67,6 +67,7 @@ begin
     0:
       begin
         iDice1 := Random(6) + 1;
+        imgDice2.Hide;
 
         case iDice1 of
           1:
@@ -87,6 +88,7 @@ begin
       begin
         iDice1 := Random(6) + 1;
         iDice2 := Random(6) + 1;
+        imgDice2.Show;
 
         case iDice1 of
           1:
