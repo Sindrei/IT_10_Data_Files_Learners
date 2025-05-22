@@ -120,14 +120,19 @@ begin
             imgDice2.Picture.LoadFromFile('images\dice-six-faces-six.png');
         end;
 
-        if iDice1 = iDice2 then
+        if (iDice1 = 6) AND (iDice2 = 6) then
+        begin
+          RichEdit1.Lines.Add('Double 6''s!');
+        end
+        else if iDice1 = iDice2 then
         begin
           RichEdit1.Lines.Add('Double Points!');
         end
-        else if iDice1 > iDice2 then
+        else if (iDice1 > iDice2) then
         begin
           RichEdit1.Lines.Add('Dice One is the higher value!');
         end
+
         else
         begin
           RichEdit1.Lines.Add('Dice Two is the higher value!');
