@@ -10,11 +10,9 @@ object frmSumListBox: TfrmSumListBox
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 16
-  object lstDat: TListBox
+  object lstData: TListBox
     Left = 24
     Top = 24
     Width = 193
@@ -35,5 +33,6 @@ object frmSumListBox: TfrmSumListBox
     Height = 33
     Caption = 'Calculate Sum'
     TabOrder = 2
+    OnClick = btnCalculateSumClick
   end
 end

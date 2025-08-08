@@ -37,13 +37,16 @@ begin
   iEnd := StrToInt(edtEnd.Text);
   iCount := 0;
 
-  for iX := iStart to iEnd do
-  begin
-    inc(iCount);
-    edtCurrent.Text := IntToStr(iX);
-    Sleep(500);
-    frmForLoop.Refresh;
-  end;
+  if iStart > iEnd then
+    showMessage('End value needs to be more than starting value')
+  else
+    for iX := iStart to iEnd do
+    begin
+      inc(iCount);
+      edtCurrent.Text := IntToStr(iX);
+      Sleep(500);
+      frmForLoop.Refresh;
+    end;
 
   lblIterrations.Caption := IntToStr(iCount);
 end;
