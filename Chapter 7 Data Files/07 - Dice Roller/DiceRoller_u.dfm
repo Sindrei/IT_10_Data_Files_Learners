@@ -10,9 +10,7 @@ object frmDiceRoller: TfrmDiceRoller
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 16
   object Label1: TLabel
     Left = 16
@@ -30,7 +28,7 @@ object frmDiceRoller: TfrmDiceRoller
   object lblRolls: TLabel
     Left = 16
     Top = 379
-    Width = 120
+    Width = 7
     Height = 16
     Caption = '0'
   end
@@ -41,6 +39,7 @@ object frmDiceRoller: TfrmDiceRoller
     Height = 35
     Caption = 'Roll the Dice'
     TabOrder = 0
+    OnClick = btnRollTheDiceClick
   end
   object lstRolls: TListBox
     Left = 16
