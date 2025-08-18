@@ -10,9 +10,7 @@ object frmCompoundInterest: TfrmCompoundInterest
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object lblHeader: TLabel
     Left = 8
@@ -82,6 +80,7 @@ object frmCompoundInterest: TfrmCompoundInterest
     Height = 57
     Caption = 'Calculate'
     TabOrder = 0
+    OnClick = btnCalculateClick
   end
   object lbxValues: TListBox
     Left = 93

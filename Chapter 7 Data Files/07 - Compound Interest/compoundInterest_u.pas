@@ -21,6 +21,7 @@ type
     lblResult: TLabel;
     lblTarget: TLabel;
     edtTarget: TEdit;
+    procedure btnCalculateClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,5 +34,33 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCompoundInterest.btnCalculateClick(Sender: TObject);
+var
+  iYear: Integer;
+  rInvestment, rTarget, rInterest, rGrowth, rValue: Real;
+  sValue: String;
+begin
+  rInvestment := StrToFloat(edtInvestment.Text);
+  rInterest := StrToFloat(edtInterest.Text) / 100;
+  rTarget := StrToFloat(edtTarget.Text);
+
+  iYear := 0;
+  rValue := rInvestment;
+
+  lbxValues.Clear;
+
+  repeat
+    rGrowth := rValue * rInterest;
+    rValue := rValue + rGrowth;
+
+    sValue := FloatToStrF(rValue, ffCurrency, 10, 2);
+    lbxValues.Items.Add(sValue);
+    iYear := iYear + 1;
+
+  until rValue >= rTarget;
+
+  lblResult.Caption := IntToStr(iYear);
+end;
 
 end.
