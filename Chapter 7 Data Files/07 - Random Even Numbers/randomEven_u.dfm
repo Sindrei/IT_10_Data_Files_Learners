@@ -36,6 +36,7 @@ object frmRandomEven: TfrmRandomEven
     Height = 25
     Caption = 'Smallest'
     TabOrder = 2
+    OnClick = btnSmallestClick
   end
   object memOut: TMemo
     Left = 216

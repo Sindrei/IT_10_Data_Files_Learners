@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics,
+  System.Classes, Vcl.Graphics, math,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
@@ -15,6 +15,7 @@ type
     memOut: TMemo;
     procedure btnAmountClick(Sender: TObject);
     procedure btnGenerateClick(Sender: TObject);
+    procedure btnSmallestClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,14 +37,30 @@ end;
 
 procedure TfrmRandomEven.btnGenerateClick(Sender: TObject);
 var
-  iCount: Integer;
+  iCount, iNum: Integer;
 begin
   iCount := 0;
-
   repeat
     inc(iCount);
-    memOut.Lines.Add(IntToStr(iCount));
+    iNum := RandomRange(50, 201);
+    memOut.Lines.Add(IntToStr(iNum));
   until iCount = iNumber;
+end;
+
+procedure TfrmRandomEven.btnSmallestClick(Sender: TObject);
+var
+  i, iSmallest, iNum: Integer;
+begin
+  iSmallest := StrToInt(memOut.Lines[0]);
+  for i := 1 to memOut.Lines.Count - 1 do
+  begin
+    iNum := StrToInt(memOut.Lines[i]);
+    if iNum < iSmallest then
+      iSmallest := iNum;
+  end;
+
+  memOut.Lines.Add('The smallest value is: ' + IntToStr(iSmallest));
+
 end;
 
 end.
