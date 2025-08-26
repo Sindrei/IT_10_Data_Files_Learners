@@ -12,9 +12,11 @@ type
     shpBall: TShape;
     tmrBall: TTimer;
     lblTime: TLabel;
+    shpRectangle: TShape;
     procedure FormShow(Sender: TObject);
     procedure tmrBallTimer(Sender: TObject);
     procedure btnGoClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -27,7 +29,7 @@ var
 implementation
 
 var
-  iVerticalDirection, iHorizonDirection, iTime: Integer;
+  iVerticalDirection, iHorizonDirection, iRectangleSpeed, iTime: Integer;
 
 {$R *.dfm}
 
@@ -41,10 +43,31 @@ begin
   iTime := 0;
 end;
 
+procedure TfrmBouncyBall.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  // Moves the rectangle to the left
+  if Key = VK_LEFT then
+  begin
+    // stops rectangle from exiting the play area
+    if shpRectangle.left > 0 then
+      shpRectangle.left := shpRectangle.left - iRectangleSpeed
+  end
+  // Moves the rectangle to the right
+  else if Key = VK_RIGHT then
+  begin
+    // stops rectangle from exiting the play area
+    if shpRectangle.left < 505 then
+      shpRectangle.left := shpRectangle.left + iRectangleSpeed;
+  end;
+
+end;
+
 procedure TfrmBouncyBall.FormShow(Sender: TObject);
 begin
   iVerticalDirection := 10;
   iHorizonDirection := 10;
+  iRectangleSpeed := 15;
   iTime := 0;
   tmrBall.Interval := 5;
   tmrBall.Enabled := False;
@@ -54,12 +77,12 @@ procedure TfrmBouncyBall.tmrBallTimer(Sender: TObject);
 begin
   // Ball drop code
   shpBall.Top := shpBall.Top + iVerticalDirection;
-  shpBall.Left := shpBall.Left + iHorizonDirection;
+  shpBall.left := shpBall.left + iHorizonDirection;
   // Ball Vertical Bounce condition
   if (shpBall.Top >= 450) or (shpBall.Top <= 0) then
     iVerticalDirection := iVerticalDirection * -1;
   // Ball Horizontal Bounce condition
-  if (shpBall.Left >= 600) or (shpBall.Left <= 0) then
+  if (shpBall.left >= 600) or (shpBall.left <= 0) then
     iHorizonDirection := iHorizonDirection * -1;
 
   iTime := iTime + 1;

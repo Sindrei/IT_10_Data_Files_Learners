@@ -10,6 +10,7 @@ object frmBouncyBall: TfrmBouncyBall
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnKeyDown = FormKeyDown
   OnShow = FormShow
   TextHeight = 15
   object shpBall: TShape
@@ -32,6 +33,12 @@ object frmBouncyBall: TfrmBouncyBall
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+  end
+  object shpRectangle: TShape
+    Left = 252
+    Top = 400
+    Width = 145
+    Height = 17
   end
   object tmrBall: TTimer
     OnTimer = tmrBallTimer
