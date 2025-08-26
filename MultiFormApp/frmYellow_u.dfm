@@ -1,6 +1,6 @@
 object frmYellow: TfrmYellow
-  Left = 0
-  Top = 0
+  Left = 378
+  Top = 177
   Caption = 'Yellow'
   ClientHeight = 441
   ClientWidth = 624
@@ -10,6 +10,8 @@ object frmYellow: TfrmYellow
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
+  ShowInTaskBar = True
   OnClose = FormClose
   OnShow = FormShow
   TextHeight = 15
@@ -47,7 +49,7 @@ object frmYellow: TfrmYellow
     Left = 240
     Top = 89
     Width = 121
-    Height = 25
+    Height = 23
     TabOrder = 2
   end
   object btnAdd: TButton

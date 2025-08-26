@@ -32,6 +32,8 @@ begin
   sName := edtName.Text;
 
   frmGreen.Hide;
+  frmGreen.Free;
+  Application.CreateForm(TfrmYellow, frmYellow);
   frmYellow.Show;
 
   // frmYellow.lblWelcome.Caption := 'Welcome ' + edtName.Text;

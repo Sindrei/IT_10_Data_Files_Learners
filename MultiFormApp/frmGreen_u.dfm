@@ -1,6 +1,6 @@
 object frmGreen: TfrmGreen
-  Left = 0
-  Top = 0
+  Left = 378
+  Top = 162
   Caption = 'Green'
   ClientHeight = 441
   ClientWidth = 624
@@ -10,6 +10,8 @@ object frmGreen: TfrmGreen
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
+  ShowInTaskBar = True
   TextHeight = 15
   object lblInstructions: TLabel
     Left = 112

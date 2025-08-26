@@ -11,6 +11,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmGreen, frmGreen);
-  Application.CreateForm(TfrmYellow, frmYellow);
   Application.Run;
 end.

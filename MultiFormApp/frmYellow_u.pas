@@ -33,7 +33,6 @@ implementation
 
 uses
   frmGreen_u;
-
 {$R *.dfm}
 
 procedure TfrmYellow.btnAddClick(Sender: TObject);
@@ -43,8 +42,10 @@ end;
 
 procedure TfrmYellow.btnGreenClick(Sender: TObject);
 begin
+  Application.CreateForm(TfrmGreen, frmGreen);
   frmGreen.show;
   frmYellow.Hide;
+  frmYellow.Free;
 end;
 
 procedure TfrmYellow.FormClose(Sender: TObject; var Action: TCloseAction);
