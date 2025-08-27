@@ -10,9 +10,7 @@ object frmDinoJump: TfrmDinoJump
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 16
   object imgDino: TImage
     Left = 8
@@ -766,6 +764,7 @@ object frmDinoJump: TfrmDinoJump
     Height = 25
     Caption = 'Jump'
     TabOrder = 0
+    OnClick = btnJumpClick
   end
   object tmrJump: TTimer
     Interval = 10
