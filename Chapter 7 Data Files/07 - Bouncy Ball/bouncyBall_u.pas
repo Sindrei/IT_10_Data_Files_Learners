@@ -15,8 +15,8 @@ type
     shpRectangle: TShape;
     procedure FormShow(Sender: TObject);
     procedure tmrBallTimer(Sender: TObject);
-    procedure btnGoClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure gameOver();
   private
     { Private declarations }
   public
@@ -25,6 +25,7 @@ type
 
 var
   frmBouncyBall: TfrmBouncyBall;
+  lblGameOver: TLabel;
 
 implementation
 
@@ -33,19 +34,16 @@ var
 
 {$R *.dfm}
 
-procedure TfrmBouncyBall.btnGoClick(Sender: TObject);
-begin
-  if tmrBall.Enabled = False then
-    tmrBall.Enabled := True
-  else
-    tmrBall.Enabled := False;
-
-  iTime := 0;
-end;
-
 procedure TfrmBouncyBall.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  // Start the movement of the object
+  if ((Key = VK_RIGHT) or (Key = VK_LEFT)) AND (tmrBall.Enabled = False) then
+  begin
+    iTime := 0;
+    lblGameOver.Free;
+    tmrBall.Enabled := True;
+  end;
   // Moves the rectangle to the left
   if Key = VK_LEFT then
   begin
@@ -73,6 +71,22 @@ begin
   tmrBall.Enabled := False;
 end;
 
+procedure TfrmBouncyBall.gameOver;
+begin
+  lblGameOver := TLabel.Create(frmBouncyBall);
+  lblGameOver.Parent := frmBouncyBall;
+  lblGameOver.left := 0;
+  lblGameOver.AutoSize := False;
+  lblGameOver.Top := frmBouncyBall.Height DIV 2;
+  lblGameOver.Width := frmBouncyBall.ClientWidth;
+  lblGameOver.Height := 50;
+  lblGameOver.Font.Size := 26;
+  lblGameOver.Font.Style := [fsBold];
+  lblGameOver.Alignment := taCenter;
+
+  lblGameOver.Caption := 'GAME OVER';
+end;
+
 procedure TfrmBouncyBall.tmrBallTimer(Sender: TObject);
 var
   iBallRight, iBallLeft, iBallMiddle, iRectangleRight: Integer;
@@ -96,6 +110,7 @@ begin
     ((iBallRight >= shpRectangle.left) AND (iBallLeft <= iRectangleRight)) then
     iVerticalDirection := iVerticalDirection * -1;
 
+  // Timer
   iTime := iTime + 1;
   lblTime.Caption := IntToStr(iTime);
 
@@ -103,13 +118,10 @@ begin
   if shpBall.Top > 500 then
   begin
     tmrBall.Enabled := False;
-
-    iTime := 0;
+    shpBall.left := 300;
+    shpBall.Top := 70;
+    gameOver;
   end;
-  // Ball Vertical Bounce condition
-  { if (shpBall.Top >= 450) or (shpBall.Top <= 0) then
-    iVerticalDirection := iVerticalDirection * -1; }
-  // Timer
 
 end;
 

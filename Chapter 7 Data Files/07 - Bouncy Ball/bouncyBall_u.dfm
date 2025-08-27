@@ -18,12 +18,10 @@ object frmBouncyBall: TfrmBouncyBall
     Top = 70
     Width = 50
     Height = 50
-    Shape = stCircle
-    OnMouseEnter = btnGoClick
   end
   object lblTime: TLabel
     Left = 8
-    Top = 56
+    Top = 8
     Width = 75
     Height = 34
     AutoSize = False
