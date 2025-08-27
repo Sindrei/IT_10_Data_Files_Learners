@@ -14,8 +14,8 @@ object frmBouncyBall: TfrmBouncyBall
   OnShow = FormShow
   TextHeight = 15
   object shpBall: TShape
-    Left = 280
-    Top = 40
+    Left = 300
+    Top = 70
     Width = 50
     Height = 50
     Shape = stCircle
@@ -35,7 +35,7 @@ object frmBouncyBall: TfrmBouncyBall
     ParentFont = False
   end
   object shpRectangle: TShape
-    Left = 252
+    Left = 260
     Top = 400
     Width = 145
     Height = 17

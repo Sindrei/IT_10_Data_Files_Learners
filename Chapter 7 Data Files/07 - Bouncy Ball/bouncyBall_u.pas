@@ -65,28 +65,52 @@ end;
 
 procedure TfrmBouncyBall.FormShow(Sender: TObject);
 begin
-  iVerticalDirection := 10;
-  iHorizonDirection := 10;
-  iRectangleSpeed := 15;
+  iVerticalDirection := 2;
+  iHorizonDirection := 2;
+  iRectangleSpeed := 25;
   iTime := 0;
   tmrBall.Interval := 5;
   tmrBall.Enabled := False;
 end;
 
 procedure TfrmBouncyBall.tmrBallTimer(Sender: TObject);
+var
+  iBallRight, iBallLeft, iBallMiddle, iRectangleRight: Integer;
+
 begin
   // Ball drop code
   shpBall.Top := shpBall.Top + iVerticalDirection;
   shpBall.left := shpBall.left + iHorizonDirection;
-  // Ball Vertical Bounce condition
-  if (shpBall.Top >= 450) or (shpBall.Top <= 0) then
+  // Ball Ceiling Bounce condition
+  if shpBall.Top <= 0 then
     iVerticalDirection := iVerticalDirection * -1;
   // Ball Horizontal Bounce condition
   if (shpBall.left >= 600) or (shpBall.left <= 0) then
     iHorizonDirection := iHorizonDirection * -1;
+  // Bounce from rectangle
+  // iBallMiddle := iBallLeft + 25;
+  iBallRight := shpBall.left + shpBall.Width;
+  iBallLeft := shpBall.left;
+  iRectangleRight := shpRectangle.left + shpRectangle.Width;
+  if (shpBall.Top + 50 = shpRectangle.Top) AND
+    ((iBallRight >= shpRectangle.left) AND (iBallLeft <= iRectangleRight)) then
+    iVerticalDirection := iVerticalDirection * -1;
 
   iTime := iTime + 1;
   lblTime.Caption := IntToStr(iTime);
+
+  // Out of Bounds
+  if shpBall.Top > 500 then
+  begin
+    tmrBall.Enabled := False;
+
+    iTime := 0;
+  end;
+  // Ball Vertical Bounce condition
+  { if (shpBall.Top >= 450) or (shpBall.Top <= 0) then
+    iVerticalDirection := iVerticalDirection * -1; }
+  // Timer
+
 end;
 
 end.
