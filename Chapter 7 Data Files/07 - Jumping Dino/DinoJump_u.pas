@@ -14,6 +14,7 @@ type
     imgCactus: TImage;
     procedure tmrJumpTimer(Sender: TObject);
     procedure btnJumpClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -33,10 +34,20 @@ begin
   iJumpSpeed := 14;
 end;
 
+procedure TfrmDinoJump.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = VK_SPACE then
+  begin
+    iJumpSpeed := 14;
+  end;
+end;
+
 procedure TfrmDinoJump.tmrJumpTimer(Sender: TObject);
 var
   iSpeed: Integer;
   iDropSpeed: Integer;
+  iDinoRight, iDinoBottom, icactusright, iCactusBottom: Integer;
 begin
   iSpeed := 6;
   iDropSpeed := 1;
@@ -56,6 +67,20 @@ begin
   begin
     imgDino.Top := 64;
     iJumpSpeed := 0;
+  end;
+
+  // ---- Collision detection ----
+  iDinoRight := imgDino.Left + imgDino.Width;
+  iDinoBottom := imgDino.Top + imgDino.Height;
+  icactusright := imgCactus.Left + imgCactus.Width - 20;
+  iCactusBottom := imgCactus.Top + imgCactus.Height - 20;
+
+  // check if rectangles overlap
+  if (imgDino.Left < icactusright) and (iDinoRight > imgCactus.Left + 20) and
+    (imgDino.Top < iCactusBottom) and (iDinoBottom > imgCactus.Top + 20) then
+  begin
+    tmrJump.Enabled := False; // stop the game
+    ShowMessage('Game Over!');
   end;
 
 end;

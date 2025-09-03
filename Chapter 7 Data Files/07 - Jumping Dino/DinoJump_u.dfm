@@ -11,6 +11,7 @@ object frmDinoJump: TfrmDinoJump
   Font.Name = 'Tahoma'
   Font.Style = []
   Position = poScreenCenter
+  OnKeyDown = FormKeyDown
   TextHeight = 16
   object imgDino: TImage
     Left = 8

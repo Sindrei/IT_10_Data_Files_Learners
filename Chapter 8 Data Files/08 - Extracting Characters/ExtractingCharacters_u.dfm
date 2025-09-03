@@ -10,9 +10,7 @@ object frmExtractingCharacters: TfrmExtractingCharacters
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 16
   object memOutput: TMemo
     Left = 16
@@ -28,6 +26,7 @@ object frmExtractingCharacters: TfrmExtractingCharacters
     Height = 25
     Caption = 'Extract characters from the beginning'
     TabOrder = 1
+    OnClick = btnExtractFromBeginClick
   end
   object btnExtractFromEnd: TButton
     Left = 215
@@ -36,5 +35,6 @@ object frmExtractingCharacters: TfrmExtractingCharacters
     Height = 25
     Caption = 'Extract characters from the end'
     TabOrder = 2
+    OnClick = btnExtractFromEndClick
   end
 end

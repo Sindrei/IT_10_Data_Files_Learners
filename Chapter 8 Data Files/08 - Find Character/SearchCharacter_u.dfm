@@ -10,9 +10,7 @@ object frmSearchForCharacters: TfrmSearchForCharacters
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 16
   object Label1: TLabel
     Left = 296
@@ -56,6 +54,7 @@ object frmSearchForCharacters: TfrmSearchForCharacters
     Height = 25
     Caption = 'Search for All Occurrences'
     TabOrder = 3
+    OnClick = btnSearchAllClick
   end
   object btnSearchFirst: TButton
     Left = 296
@@ -64,5 +63,6 @@ object frmSearchForCharacters: TfrmSearchForCharacters
     Height = 25
     Caption = 'Search for First'
     TabOrder = 4
+    OnClick = btnSearchFirstClick
   end
 end
