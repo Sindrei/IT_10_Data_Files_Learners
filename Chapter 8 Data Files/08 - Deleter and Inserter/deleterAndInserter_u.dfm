@@ -10,9 +10,7 @@ object frmDeleterAndInserter: TfrmDeleterAndInserter
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object lblPhrase: TLabel
     Left = 8
@@ -73,6 +71,7 @@ object frmDeleterAndInserter: TfrmDeleterAndInserter
     Height = 25
     Caption = 'Delete'
     TabOrder = 0
+    OnClick = btnDeleteClick
   end
   object edtPosition: TEdit
     Left = 8
@@ -95,6 +94,7 @@ object frmDeleterAndInserter: TfrmDeleterAndInserter
     Height = 25
     Caption = 'Insert'
     TabOrder = 3
+    OnClick = btnInsertClick
   end
   object memPhrase: TMemo
     Left = 8
