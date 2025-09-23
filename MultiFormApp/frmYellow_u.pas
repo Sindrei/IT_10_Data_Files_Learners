@@ -44,7 +44,6 @@ procedure TfrmYellow.btnGreenClick(Sender: TObject);
 begin
   Application.CreateForm(TfrmGreen, frmGreen);
   frmGreen.show;
-  frmYellow.Hide;
   frmYellow.Free;
 end;
 
